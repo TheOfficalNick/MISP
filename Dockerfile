@@ -2,6 +2,9 @@ FROM debian:stable-slim
 LABEL maintainer="Your Name <your_email@example.com>"
 ARG MISP_VERSION=2.4.143
 
+#https sources
+RUN apt-get update && apt-get install -y apt-transport-https
+
 # Install dependencies
 RUN apt-get update && \
     apt-get -y upgrade && \
